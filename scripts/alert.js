@@ -21,7 +21,7 @@ function showAlert() {
 }
 
 // Регистрируем обработчик события на событие 'load' объекта window
-window.onload = showAlert();
+showAlert();
 
 
 
