@@ -51,4 +51,38 @@ nav a:hover {
     h1 {
         color:rgb(175, 0, 0)
     }
+    
 }
+
+
+
+.container-output {
+    display: flex;
+    justify-content: center; /* Центрирование по горизонтали */
+    align-items: center; /* Центрирование по вертикали */
+    height: 50vh; /* Это необходимо для того, чтобы родительский 
+    контейнер занимал всю высоту видимой области экрана */
+}
+
+.output {
+    text-align: center;
+    margin: 15px 0px 15px 0px;
+    font-size: 38px;
+    
+    
+}
+
+@media screen and (min-width: 600px) {
+    .output {
+    font-size: 58px;
+    }
+    
+}
+
+.output:hover {
+    text-decoration: underline;
+    text-underline-offset: 10px;
+    text-decoration-color: rgb(175, 0, 0);
+    transition: 2s;
+}
+
