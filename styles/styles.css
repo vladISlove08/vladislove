@@ -1,5 +1,6 @@
 :root {
     --main-text-color: rgb(68,62,41);
+    --main-bacground-color: rgb(244,246,221);
     
 }
 
@@ -118,5 +119,7 @@ button:hover {
     text-align: center;
     margin-top: 15px;
 }
+
+
 
 
