@@ -3,34 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>alert page</title>
-    <link rel="stylesheet" href="/vladislove/styles/styles.css">
+    <title>Щас бы влада</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sixtyfour&display=swap" rel="stylesheet">
+    
 </head>
 <body>
-    <header>
-        
-            <h1>Hello world!</h1>
-        
-        <nav>
-            <ul class="ul">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contacts</a></li>
-              </ul>
-        </nav>
-    </header>
-    <main>
-        <div class="button-container" id="computerButton">
-        <button onclick="showAlert()" id="computerButton">Write your name</button>
+    <script src="logger.js"></script>
+   
+
+    <h1 class="h1">
+        Racism Lore
+    </h1>
+
+    <audio id="myAudio">
+        <source src="soundEggs.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      <div  class="div-button-feeling-lucky">
+      <button  class="button-feeling-lucky" onclick="playAudio()">яички 😋😋😋</button>
         </div>
-        
-        <div class="container-output">
-            <div id="output" class="output">
-            </div>
-        </div>
-    </main>
-    <script src="/vladislove/scripts/alert.js">
+
+    <div class="button-parant">
+    <input value="Нажми меня" onclick="alert('Fuck you slut')" type="button" class="button">
+    </div>
+
+    <div class="container">
+    <img  src="4c6b6aae82b560505cbc71731c23494d.jpg" alt="хуй">
+</div>  
+<div class="div-button-feeling-lucky"> 
+    <button  class="button-feeling-lucky" onclick="openRandomLink();">I'm feeling Lucky! </button>
+    
+</div>
+<div>
+    <h2><a href="2page.html"> don't click not finished</a> </h2>
+</div>
+    <script src="script.js">
     </script>
+
+<script>
+    // ставим настройки по умолчанию
+Logger.useDefaults();
+
+// и выводим тестовые сообщения разных уровней
+Logger.debug("Это обычное сообщение о каком-то событии, например для отладки");
+Logger.info("Информационное сообщение, его можно привязать к разовому событию");
+Logger.warn("А вот это уже серьёзно, тут логгер нас о чём-то предупреждает. Ничего критичного, но присмотреться стоит");
+Logger.error("Ошибка — что-то в программе пошло не так");
+</script>
+<form name="contact" netlify class="label2">
+    <p>Обратная связь со мной</p>
+    <p>
+      <label class="label2">Name <input type="text" name="name" /></label>
+    </p>
+    <p>
+        <label class="label2">Ваше сообщение <input type="text" name="message" lang="ukr" /></label>
+      </p>
+    <p>
+      <label class="label2">Ваш Email <input type="email" name="email" /></label>
+    </p>
+    <p class="button-feeling-lucky-submit">
+      <button type="submit" class="button-feeling-lucky" onclick="sendForm();" >Send</button>
+    </p>
+  </form>
 </body>
 </html>

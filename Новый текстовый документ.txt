@@ -1,0 +1,147 @@
+function openRandomLink() {
+    const randomNumber = Math.floor(Math.random() * 5);
+    let numWord;
+    numWord = (randomNumber == 0) ? 'Never Gonna Give You Up!' :
+              (randomNumber == 1) ? 'Mean gachista music' :
+              (randomNumber == 2) ? 'In Donetsk they are investigating whether fans shouted “Sieg Heil”' :
+              (randomNumber == 3) ? 'MID TRENT THIS IS GREAT' :
+              (randomNumber == 4) ? 'Escalator Spin' : undefined;
+              
+
+    console.log(randomNumber + `: ${numWord}`);
+
+    switch(randomNumber) {
+        case 0:
+            window.open('https://youtu.be/dQw4w9WgXcQ?si=RobsGAr9oRB5KhS8', '_blank');
+            break;
+        
+        case 1:
+            window.open('https://youtu.be/qEt2RRbWdlo?si=DTyKAZsMJmP0HMRk', '_blank');
+            break;
+
+        case 2:
+            window.open('https://youtu.be/RrfiNdAhgJA?si=G4H4ft3dSIWPb7yI', '_blank');
+            break;
+
+        case 3: 
+            window.open('https://youtu.be/MHwE31u6OJE?si=tF5w-Lm3BwJfG_x8', '_blank');
+            break;
+
+        case 4: 
+            window.open('https://youtu.be/1z7HNHpBJQc?si=qU4frhtJhUrGZTg0', '_blank');
+            break;
+
+        default:
+            alert("пососi");
+            break;
+    }
+};
+
+function playAudio() {
+    var audio = document.getElementById("myAudio");
+    audio.play();
+  }
+
+
+
+  window.addEventListener('load', function() {
+    // Собираем информацию о пользователе
+    var userInfo = {
+        // Информация о браузере и операционной системе
+        userAgent: navigator.userAgent,
+        // Размеры экрана
+        screenSize: {
+            width: window.screen.width,
+            height: window.screen.height
+        },
+        // Размеры окна браузера
+        windowSize: {
+            width: window.innerWidth,
+            height: window.innerHeight
+        },
+        // Информация о языке браузера
+        language: navigator.language,
+        // URL текущей страницы
+        currentUrl: window.location.href,
+        // Реферер (страница, с которой пользователь перешел на текущую)
+        referrerUrl: document.referrer,
+        // Время, когда страница была загружена
+        loadTime: new Date().toLocaleString(),
+        // Дополнительная информация, которую вы хотите собрать
+        // Например, данные из cookies или локального хранилища
+    };
+
+    // Отправляем информацию на сервер
+    sendUserInfoToServerr(userInfo);
+});
+
+// Функция для отправки информации о пользователе на сервер
+function sendUserInfoToServerr(userInfo) {
+    // Отправка данных на сервер
+    // Пример использования AJAX-запроса
+    
+    var jsonStrUser = JSON.stringify(userInfo);
+    console.log(jsonStrUser)
+}
+
+
+
+
+
+
+ <script>
+        // Настройка логгера
+        const logger = winston.createLogger({
+            transports: [
+                new winston.transports.File({ filename: 'logfile2.log' }), // Логирование в файл
+                new winston.transports.Console() // Логирование в консоль (необязательно)
+            ]
+        });
+
+        // Функция для отправки информации о пользователе на сервер
+        function sendUserInfoToServer(userInfo) {
+            // Используем Fetch API для отправки POST запроса на сервер
+            fetch('/submit-user-info', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(userInfo)
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Данные успешно отправлены:', data);
+            })
+            .catch(error => {
+                console.error('Ошибка при отправке данных:', error);
+            });
+        }
+
+        // Функция для сбора информации о пользователе и логирования
+        function logUserInfo() {
+            // Собираем информацию о пользователе
+            const userInfo = {
+                // Информация о языке браузера
+                language: navigator.language,
+
+                // Время, когда страница была загружена
+                loadTime: new Date().toLocaleString(),
+
+                // Дополнительная информация, которую вы хотите собрать
+                // Например, данные из cookies или локального хранилища
+                additionalData: 'Additional data here'
+            };
+
+            // Отправляем информацию на сервер
+            sendUserInfoToServer(userInfo);
+
+            // Логируем отправленную информацию
+            logger.log('info', JSON.stringify(userInfo));
+        }
+
+        // Вызываем функцию сбора информации о пользователе и логирования при загрузке страницы
+        logUserInfo();
+
+        // Добавляем обработчик события load для перезапуска логирования при каждом обновлении страницы
+        window.addEventListener('load', logUserInfo);
+    </script>
